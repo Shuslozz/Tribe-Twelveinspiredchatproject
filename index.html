@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLLECTIVE UNCONSCIOUS - Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Vintage Film Grain -->
+    <div class="film-grain"></div>
+    <div class="scan-lines"></div>
+    
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="symbol">▲</div>
+                <h1>COLLECTIVE UNCONSCIOUS</h1>
+                <div class="subtitle">TERMINAL ACCESS GRANTED</div>
+            </div>
+            <div class="connection-info">
+                <span class="status">CONNECTED</span>
+                <span class="observers" id="observerCount">1 OBSERVER</span>
+                <span class="datetime" id="datetime"></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>NAVIGATION</h2>
+                <button class="sidebar-toggle" id="sidebarToggle">▼</button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>COMMUNICATION</h3>
+                    <ul>
+                        <li><a href="#" data-section="chat" class="nav-link active">TERMINAL CHAT</a></li>
+                        <li><a href="#" data-section="whispers" class="nav-link">WHISPER NETWORK</a></li>
+                        <li><a href="#" data-section="collective" class="nav-link">COLLECTIVE MIND</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>INVESTIGATION</h3>
+                    <ul>
+                        <li><a href="#" data-section="evidence" class="nav-link">EVIDENCE VAULT</a></li>
+                        <li><a href="#" data-section="coordinates" class="nav-link">COORDINATES</a></li>
+                        <li><a href="#" data-section="symbols" class="nav-link">SYMBOL DECODER</a></li>
+                        <li><a href="#" data-section="timeline" class="nav-link">TIMELINE</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>ARCHIVES</h3>
+                    <ul>
+                        <li><a href="#" data-section="recordings" class="nav-link">RECORDINGS</a></li>
+                        <li><a href="#" data-section="documents" class="nav-link">DOCUMENTS</a></li>
+                        <li><a href="#" data-section="surveillance" class="nav-link">SURVEILLANCE</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section danger">
+                    <h3>⚠ RESTRICTED ⚠</h3>
+                    <ul>
+                        <li><a href="#" data-section="classified" class="nav-link">CLASSIFIED</a></li>
+                        <li><a href="#" data-section="experiments" class="nav-link">EXPERIMENTS</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="warning">
+                    <p>⚠ WARNING ⚠</p>
+                    <p>UNAUTHORIZED ACCESS MONITORED</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat Section -->
+            <section class="content-section active" id="chat-section">
+                <div class="section-header">
+                    <h2>TERMINAL CHAT</h2>
+                    <div class="section-controls">
+                        <button class="btn-small" id="clearChat">CLEAR</button>
+                        <button class="btn-small" id="archiveChat">ARCHIVE</button>
+                    </div>
+                </div>
+                
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="system-message">
+                            <span class="timestamp">[SYSTEM]</span>
+                            <span class="message">CONNECTION ESTABLISHED... WELCOME TO THE COLLECTIVE</span>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-area">
+                        <div class="user-info">
+                            <input type="text" id="usernameInput" placeholder="CODENAME" maxlength="15">
+                            <span class="status-indicator">ONLINE</span>
+                        </div>
+                        <div class="message-input">
+                            <input type="text" id="messageInput" placeholder="ENTER MESSAGE..." maxlength="200">
+                            <button id="sendButton">TRANSMIT</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other Sections -->
+            <section class="content-section" id="evidence-section">
+                <div class="section-header">
+                    <h2>EVIDENCE VAULT</h2>
+                </div>
+                <div class="evidence-grid">
+                    <div class="evidence-item">
+                        <div class="evidence-preview">
+                            <div class="static-image"></div>
+                        </div>
+                        <div class="evidence-info">
+                            <h4>RECORDING_001.mp4</h4>
+                            <p>Last modified: ████████</p>
+                            <p>Classification: ██████</p>
+                        </div>
+                    </div>
+                    <div class="evidence-item">
+                        <div class="evidence-preview">
+                            <div class="corrupted-image"></div>
+                        </div>
+                        <div class="evidence-info">
+                            <h4>PHOTO_████.jpg</h4>
+                            <p>Status: CORRUPTED</p>
+                            <p>Location: [REDACTED]</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="coordinates-section">
+                <div class="section-header">
+                    <h2>COORDINATES</h2>
+                </div>
+                <div class="coordinates-display">
+                    <div class="coord-input">
+                        <label>LATITUDE:</label>
+                        <input type="text" id="latInput" placeholder="██.██████">
+                    </div>
+                    <div class="coord-input">
+                        <label>LONGITUDE:</label>
+                        <input type="text" id="lngInput" placeholder="███.██████">
+                    </div>
+                    <button class="btn-primary" id="trackLocation">TRACK LOCATION</button>
+                    <div class="location-results" id="locationResults">
+                        <p>AWAITING COORDINATES...</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="symbols-section">
+                <div class="section-header">
+                    <h2>SYMBOL DECODER</h2>
+                </div>
+                <div class="symbol-decoder">
+                    <div class="symbol-input">
+                        <textarea id="symbolInput" placeholder="ENTER SYMBOLS OR CIPHER TEXT..."></textarea>
+                        <button class="btn-primary" id="decodeSymbols">DECODE</button>
+                    </div>
+                    <div class="decoder-result" id="decoderResult">
+                        <p>NO SYMBOLS TO DECODE</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="classified-section">
+                <div class="section-header">
+                    <h2>⚠ CLASSIFIED ACCESS ⚠</h2>
+                </div>
+                <div class="classified-content">
+                    <div class="access-denied">
+                        <h3>ACCESS DENIED</h3>
+                        <p>INSUFFICIENT CLEARANCE LEVEL</p>
+                        <div class="security-prompt">
+                            <input type="password" id="accessCode" placeholder="ENTER ACCESS CODE">
+                            <button id="attemptAccess">ATTEMPT ACCESS</button>
+                        </div>
+                        <div class="failed-attempts">
+                            Failed attempts: <span id="failedAttempts">0</span>/3
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- User List Panel -->
+    <div class="user-panel" id="userPanel">
+        <div class="panel-header">
+            <h3>ACTIVE OBSERVERS</h3>
+            <button class="panel-toggle" id="userPanelToggle">▲</button>
+        </div>
+        <div class="user-list" id="userList">
+            <div class="user-item">
+                <span class="username">ANONYMOUS</span>
+                <span class="status">CONNECTED</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification System -->
+    <div class="notification-container" id="notifications"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
